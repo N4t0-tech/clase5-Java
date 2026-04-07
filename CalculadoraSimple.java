@@ -13,7 +13,17 @@ public class CalculadoraSimple {
         scanner.close();
     }
 
+    // Códigos de color ANSI
+    static final String RESET  = "\u001B[0m";
+    static final String CYAN   = "\u001B[36m";
+    static final String YELLOW = "\u001B[33m";
+    static final String GREEN  = "\u001B[32m";
+    static final String BOLD   = "\u001B[1m";
+    static final String DIM    = "\u001B[2m";
+
     public static void mostrarMenu() {
+        System.out.println();
+        System.out.println(CYAN + BOLD);
         System.out.println("                     /$$                     /$$             /$$                        ");
         System.out.println("                    | $$                    | $$            | $$                        ");
         System.out.println("  /$$$$$$$  /$$$$$$ | $$  /$$$$$$$ /$$   /$$| $$  /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$  ");
@@ -22,15 +32,20 @@ public class CalculadoraSimple {
         System.out.println("| $$       /$$__  $$| $$| $$      | $$  | $$| $$ /$$__  $$  | $$ /$$| $$  | $$| $$      ");
         System.out.println("|  $$$$$$$|  $$$$$$$| $$|  $$$$$$$|  $$$$$$/| $$|  $$$$$$$  |  $$$$/|  $$$$$$/| $$      ");
         System.out.println(" \\_______/ \\_______/|__/ \\_______/ \\______/ |__/ \\_______/   \\___/   \\______/ |__/");
-        System.out.println("-------------------------------Seleccione una operación:--------------------------------");
-        System.out.println("1. Suma");
-        System.out.println("2. Resta");
-        System.out.println("3. Multiplicación");
-        System.out.println("4. División");
-        System.out.println("5. Raíz cuadrada");
-        System.out.println("6. Potencia");
-        System.out.println("7. Modulo");
-        System.out.println("8. Salir");
+        System.out.println(RESET);
+        System.out.println(YELLOW + BOLD + "  ╔══════════════════════════════════════╗");
+        System.out.println("  ║       SELECCIONE UNA OPERACIÓN       ║");
+        System.out.println("  ╠══════════════════════════════════════╣" + RESET);
+        System.out.println(GREEN + "  ║  " + BOLD + "1." + RESET + GREEN + "  Suma                            ║");
+        System.out.println("  ║  " + BOLD + "2." + RESET + GREEN + "  Resta                           ║");
+        System.out.println("  ║  " + BOLD + "3." + RESET + GREEN + "  Multiplicación                  ║");
+        System.out.println("  ║  " + BOLD + "4." + RESET + GREEN + "  División                        ║");
+        System.out.println("  ║  " + BOLD + "5." + RESET + GREEN + "  Raíz cuadrada                   ║");
+        System.out.println("  ║  " + BOLD + "6." + RESET + GREEN + "  Potencia                        ║");
+        System.out.println("  ║  " + BOLD + "7." + RESET + GREEN + "  Módulo                          ║");
+        System.out.println("  ║  " + BOLD + "8." + RESET + GREEN + "  Salir                           ║" + RESET);
+        System.out.println(YELLOW + BOLD + "  ╚══════════════════════════════════════╝" + RESET);
+        System.out.print(BOLD + "\n  >> Opción: " + RESET);
     }
 
     public static boolean ejecutarOperacion(int opcion, Scanner scanner) {
